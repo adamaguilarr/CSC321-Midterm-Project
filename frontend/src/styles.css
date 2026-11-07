@@ -538,7 +538,8 @@ input[aria-invalid="true"] {
   display: grid;
   gap: 10px;
   width: 100%;
-  max-width: min(100%, calc(100vh - 150px));
+  /* Leaves room for the header, back link and both player banners at any window height. */
+  max-width: min(100%, max(320px, calc(100vh - 240px)));
   min-width: 0;
   margin: 0 auto;
 }
@@ -693,8 +694,8 @@ input[aria-invalid="true"] {
 
 .square--movable .piece {
   box-shadow:
-    0 0 0 2px var(--highlight),
-    0 2px 4px rgb(0 0 0 / 45%);
+    0 0 0 3px var(--highlight),
+    0 0 10px 3px rgb(232 179 63 / 55%);
 }
 
 .square--jumped .piece {
