@@ -9,7 +9,9 @@ Every error response looks like::
 
 import logging
 
+from django.core.exceptions import PermissionDenied
 from django.db import IntegrityError
+from django.http import Http404
 from rest_framework import exceptions, status
 from rest_framework.response import Response
 from rest_framework.views import exception_handler
@@ -18,6 +20,12 @@ logger = logging.getLogger(__name__)
 
 
 def api_exception_handler(exc, context):
+    # DRF converts these two inside its own handler, too late for us to read their codes.
+    if isinstance(exc, Http404):
+        exc = exceptions.NotFound()
+    elif isinstance(exc, PermissionDenied):
+        exc = exceptions.PermissionDenied()
+
     response = exception_handler(exc, context)
 
     if response is None:
