@@ -4,6 +4,34 @@ Correspondence checkers. Invite an opponent to a persistent board, then each mak
 
 Built with Django REST Framework and React with TypeScript for CSC 3210.
 
+## Screenshots
+
+A game between two players, `maya` (red) and `jordan` (white).
+
+**Login**
+
+![Login page](docs/screenshots/01-login.png)
+
+**Dashboard**, with a pending invitation, a game in play, the player's record and the form for challenging someone
+
+![Dashboard](docs/screenshots/02-dashboard.png)
+
+**A game in progress**, from red's side. Pieces that can move are outlined in gold, and the move history lists every move in notation, including captures.
+
+![Game in progress, red to move](docs/screenshots/03-game-your-turn.png)
+
+**Choosing a move.** Clicking a piece marks the squares it can legally move to.
+
+![Selecting a piece shows its legal moves](docs/screenshots/04-selecting-a-move.png)
+
+**The same game from white's side.** The board is flipped, and the player waits for their opponent to move.
+
+![Opponent's view while waiting](docs/screenshots/05-game-opponent-view.png)
+
+**A finished game**, won by resignation
+
+![Finished game](docs/screenshots/06-game-finished.png)
+
 ## Run it locally
 
 You need Python 3.12+ and Node 20+. Use two terminals.
